@@ -1,4 +1,4 @@
-# 🧠 PubMed Article Summarizer
+# 🧠 T5 Model PubMed Article Summarizer
 
 A lightweight Flask-based web application for summarizing PubMed articles using pre-trained **T5 model** from Hugging Face.
 Upload a CSV file of articles, and the app generates concise summaries viewable in your browser.
