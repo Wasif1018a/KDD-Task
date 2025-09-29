@@ -12,7 +12,7 @@ Upload a CSV file of articles, and the app generates concise summaries viewable 
 | **Documentation.docx**                         | Project documentation and development notes.                                               |
 | **Flask_Main.py**                              | Main Flask backend handling uploads, running the summarization model, and serving results. |
 | **Flask_UI.html**                              | Frontend HTML template for uploading files and displaying summarized articles.             |
-| **Hugging_Face_Data_Preprocessing_A…**         | Notebook/script for Hugging Face data preprocessing and model fine-tuning.                 |
+| **Hugging_Face_Data_Preprocessing_And_Summarization.py**         | Notebook/script for Hugging Face data preprocessing and model fine-tuning.                 |
 | **README.md**                                  | This file. Project overview, setup instructions, and usage details.                        |
 
 ---
