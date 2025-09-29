@@ -72,7 +72,7 @@ python app.py
 This will start the Flask development server.
 
 Access the Web Application:
-Open a web browser and go to http://127.0.0.1:5000/.
+Open a web browser and go to http://127.0.0.1:5000/ or any selected or default port.
 
 Upload CSV Files:
 
