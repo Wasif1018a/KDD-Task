@@ -1,93 +1,99 @@
-# KDD-Task
-PubMed Article Summarizer Documentation
+# 🧠 PubMed Article Summarizer
 
-Overview
-This document outlines the development process for a web application that allows users to upload CSV files containing PubMed articles for summarization. The application utilizes the T5 model for text summarization and is built using Python with Flask framework.
+A lightweight Flask-based web application for summarizing PubMed articles using a fine-tuned **T5 model** from Hugging Face.
+Upload a CSV file of articles, and the app generates concise summaries viewable in your browser.
 
-Process Outline
-1.	Data Exploration and Preparation:
-o	Identify and prepare a sample dataset of PubMed articles in CSV format.
-o	Ensure the dataset includes a column named article containing the full text of each PubMed article.
+---
 
-2.	Model Selection:
-o	Selected the T5 model from Hugging Face Transformers for text summarization.
-o	Reasons for choosing T5:
-	State of the art performance in summarization tasks.
-	Ability to handle long documents efficiently.
-	Pre-trained weights and fine-tuning capabilities.
+## 📂 Repository Contents
 
-3.	Model Fine-Tuning:
-o	Downloaded and fine-tuned the T5 model on a local machine using TensorFlow or PyTorch.
-o	Fine-tuning steps:
-	Preprocessed the PubMed articles by cleaning and tokenizing the text.
-	Defined training parameters and performed multiple epochs to optimize model performance.
-	Saved the fine-tuned model checkpoints for deployment.
+| File                                           | Description                                                                                |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Documentation.docx**                         | Project documentation and development notes.                                               |
+| **Flask_Main.py**                              | Main Flask backend handling uploads, running the summarization model, and serving results. |
+| **Flask_UI.html**                              | Frontend HTML template for uploading files and displaying summarized articles.             |
+| **Hugging_Face_Data_Preprocessing_A…**         | Notebook/script for Hugging Face data preprocessing and model fine-tuning.                 |
+| **README.md**                                  | This file. Project overview, setup instructions, and usage details.                        |
 
-4.	Web Application Development:
-o	Developed a web application using Flask, a lightweight Python web framework.
-o	Designed and implemented the front-end using HTML/CSS for user interaction.
-o	Integrated back-end functionality to:
-	Handle file uploads (CSV files containing PubMed articles).
-	Use the fine-tuned T5 model to summarize each article.
-	Display the original articles and their summarized versions on the web interface.
+---
 
-Setup and Running Instructions:
+## ✨ Features
 
-Prerequisites
+* **CSV Upload** – Upload PubMed articles in CSV format.
+* **Summarization** – Summarizes each article using a fine-tuned T5 model.
+* **Web UI** – Simple HTML interface built with Flask templates.
+* **Preprocessing Script** – Hugging Face preprocessing pipeline for preparing data.
 
-Ensure the following are installed:
-Python (3.x recommended)
-Flask (pip install Flask)
-Transformers library (pip install transformers)
-NLTK (pip install nltk)
-Steps to Run the Application
-Clone the Repository:
+---
 
-bash
-Copy code
-git clone https://github.com/your/repository.git
-cd repository-name
-Install Dependencies:
+## ⚙️ Installation
 
-bash
-Copy code
+### Prerequisites
+
+* Python 3.x
+* Flask
+* Transformers (Hugging Face)
+* NLTK
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
-Download NLTK Resources:
-Run Python and execute the following:
+```
 
-python
-Copy code
+Download NLTK resources:
+
+```python
 import nltk
 nltk.download('stopwords')
 nltk.download('punkt')
-Fine-Tune the T5 Model (Optional):
+```
 
-If not already fine-tuned, follow the fine-tuning steps provided in the model selection section.
-Ensure the fine-tuned model weights are saved in a directory accessible to the Flask application.
-Run the Flask Application:
+---
 
-bash
-Copy code
-python app.py
-This will start the Flask development server.
+## 🚀 Running the App
 
-Access the Web Application:
-Open a web browser and go to http://127.0.0.1:5000/ or any selected or default port.
+1. Clone the repository:
 
-Upload CSV Files:
+```bash
+git clone https://github.com/your/repo.git
+cd your-repo
+```
 
-Use the provided form to upload a CSV file containing PubMed articles.
-Each row in the CSV file should have an article column with the full text of a PubMed article.
-View Summarized Articles:
+2. Run the Flask backend:
 
-Upon submission, the application will summarize each article using the fine-tuned T5 model.
-The original articles and their summarized versions will be displayed in a table format on the web interface.
-Additional Considerations
-Error Handling: Ensure robust error handling for file uploads, model inference, and application logic.
-Performance: Optimize the application for performance, considering large CSV files and complex text summarization tasks.
-Security: Implement necessary security measures to protect user data and prevent vulnerabilities.
+```bash
+python Flask_Main.py
+```
 
-Conclusion:
-This documentation provides a detailed overview of the PubMed Article Summarizer web application, covering data preparation, model selection and fine-tuning, Flask application development, setup instructions, and additional considerations. Follow these steps to deploy and utilize the application effectively.
+3. Open your browser at:
 
+```
+http://127.0.0.1:5000/
+```
 
+4. Upload your CSV file (must contain an **`article`** column).
+5. View original and summarized articles in the table shown on the page.
+
+---
+
+## 📝 Usage Notes
+
+* **Model Fine-Tuning** – If you haven’t fine-tuned T5 yet, use the provided Hugging Face preprocessing script to prepare your dataset. Save the fine-tuned weights in a directory accessible to the Flask app.
+* **Security** – For production, secure file uploads and run behind HTTPS.
+* **Performance** – Large CSVs may require batch processing.
+
+---
+
+## 🧑‍💻 Authors
+
+* **Wasif Mehboob**
+
+---
+
+## 🙏 Acknowledgments
+
+* Hugging Face for the **Transformers** library and pre-trained models.
+* Flask for providing a lightweight Python web framework.
+
+---
